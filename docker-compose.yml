@@ -1,13 +1,14 @@
+version: "3.0"
+
 services:
-  
   fastapi:
-       build: .
-       container_name: fastapi
-       tty: true
-       volumes:
-           - "./python:/workdir"
-       ports:  
-           - 8000:8000 
-       command: uvicorn intro:app --reload
+    build: .
+    container_name: fastapi
+    tty: true
+    volumes:
+        - "./python:/workdir"
+    ports:  
+        - 8000:8000 
+    command: uvicorn intro:app --reload --host 0.0.0.0 --port 8000
 
        
